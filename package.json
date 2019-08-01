@@ -1,9 +1,9 @@
 {
-  "name": "vue-admin-template",
+  "name": "d3-v",
   "version": "4.1.0",
-  "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
-  "author": "Pan <panfree23@gmail.com>",
-  "license": "MIT",
+  "description": "基于d3.js的vue插件",
+  "author": "",
+  "license": "",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
