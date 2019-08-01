@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { getList } from '@/api/table'
+import { getList, getList2 } from '@/api/table'
 
 export default {
   filters: {
@@ -65,6 +65,9 @@ export default {
   },
   created() {
     this.fetchData()
+    getList2().then(response => {
+      debugger
+    })
   },
   methods: {
     fetchData() {

@@ -7,3 +7,10 @@ export function getList(params) {
     params
   })
 }
+export function getTableList(params) {
+  return request({
+    url: '/workFind/getPersonFatigue',
+    method: 'post',
+    params
+  })
+}

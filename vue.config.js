@@ -21,11 +21,13 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: '/',
-  outputDir: 'dist',
-  assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
-  productionSourceMap: false,
+  publicPath: './',
+  outputDir: 'dist',  //文件打包目录
+  assetsDir: 'static',  // 静态资源目录
+  // filenameHashing:false,   //来关闭文件名哈希
+  lintOnSave: process.env.NODE_ENV === 'development',  // 开发模式启用eslint
+  productionSourceMap: false,  //生产环境的 source map
+  // assetsPublicPath:'./',
   devServer: {
     port: port,
     open: true,
@@ -38,6 +40,7 @@ module.exports = {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
         target: `http://localhost:${port}/mock`,
+        // target: `http://localhost:${port}`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
@@ -51,6 +54,7 @@ module.exports = {
     // it can be accessed in index.html to inject the correct title.
     name: name,
     resolve: {
+      // extensions: ['.js', '.vue', '.json'],
       alias: {
         '@': resolve('src')
       }
