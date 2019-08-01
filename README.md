@@ -17,7 +17,7 @@
 git clone https://github.com/heroFan/d3-vue.git
 
 # enter the project directory
-cd vue-admin-template
+cd d3-vue
 
 # install dependency
 npm install

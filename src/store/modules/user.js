@@ -24,6 +24,11 @@ const actions = {
   // user login
   login({ commit }, userInfo) {
     const { username, password } = userInfo
+    // setTimeout(function(){
+    //   commit('SET_TOKEN', 'admin-token')
+    //   setToken('admin-token')
+    // })
+ 
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
