@@ -1,13 +1,20 @@
 <template>
-  <!-- <div style="width:100%;height:100%;"> -->
-  <svg id="bar" width="900" height="600" />
-  <!-- </div> -->
+  <div>
+  <svg id="bar" />
+  </div>
 </template>
 <script>
 import * as d3 from 'd3'
 export default {
-  name: 'BarChart',
   props: {
+    width:{
+      type:Number,
+      default:400
+    },
+    height:{
+      type:Number,
+      default:400
+    },
     dataset: {
       type: Array,
       default: function() {
@@ -25,8 +32,10 @@ export default {
     into() {
       const marge = { top: 30, bottom: 30, left: 30, right: 30 }
       const svg = d3.select('#bar') // 得到SVG画布
-      const width = svg.attr('width') // 得到画布的宽
-      const height = svg.attr('height') // 得到画布的长
+      svg.attr('width',this.width)
+      svg.attr('height',this.height)
+      const width = this.width // 得到画布的宽
+      const height = this.height // 得到画布的长
       const g = svg
         .append('g')
         .attr('transform', 'translate(' + marge.top + ',' + marge.left + ')')
@@ -95,7 +104,7 @@ export default {
       // 绘制文字
       gs.append('text')
         .attr('x', function(d, i) {
-          return xScale(i) + rectPadding / 2
+          return xScale(i) + rectPadding / 2 +25
         })
         .attr('y', function(d) {
           const min = yScale.domain()[0]
@@ -105,6 +114,8 @@ export default {
           (xScale.step() - rectPadding) / 2
         })
         .attr('dy', 20)
+        // .attr('font-size',)
+        .attr('fill','#fff')
         .text(function(d) {
           return d
         })
