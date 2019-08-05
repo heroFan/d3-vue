@@ -23,4 +23,4 @@ Vue.use(fanchart)
 
 ### demo 地址
 <!-- 括号的逗号需要一个空格 -->
-[demo演示页面](https://herofan.github.io/d3-vue/dist/index.html, '基于d3.js vue 插件')
+[demo演示页面](https://herofan.github.io/d3-vue/dist/index.html)
